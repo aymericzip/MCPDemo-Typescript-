@@ -3,7 +3,7 @@ import { Transport } from "@modelcontextprotocol/sdk/shared/transport.js"
 import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js"
 import { URL } from "url"
 
-class SESClient {
+class SSEClient {
     private client: Client
     private transport: Transport | null = null
     private isCompleted = false
@@ -58,7 +58,7 @@ class SESClient {
 }
 
 async function main() {
-    const client = new SESClient("sse-server")
+    const client = new SSEClient("sse-server")
 
     try {
         await client.connectToServer("http://localhost:3000/connect")
